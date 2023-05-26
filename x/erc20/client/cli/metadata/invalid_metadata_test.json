@@ -1,0 +1,21 @@
+{
+  "metadata": [
+    {
+      "description": 1,
+      "denom_units": [
+        {
+          "denom": "ablackfury",
+          "exponent": 0
+        },
+        {
+          "denom": "blackfury",
+          "exponent": 18
+        }
+      ],
+      "base": "ablackfury",
+      "display": "ablackfury",
+      "name": "ablackfury",
+      "symbol": "BLACKFURY"
+    }
+  ]
+}

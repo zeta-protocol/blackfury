@@ -1,0 +1,63 @@
+version: '3'
+
+services:
+  node0:
+    container_name: blackfurynode0
+    image: "blackfury/node"
+    ports:
+      - "26656-26657:26656-26657"
+    volumes:
+      - ./build/node0/blackfuryd:/blackfury:Z
+    command:
+      - /blackfuryd start --home /blackfury
+    networks:
+      localnet:
+        ipv4_address: 192.167.10.2
+
+  node1:
+    container_name: blackfurynode1
+    image: "blackfury/node"
+    ports:
+      - "26659-26660:26656-26657"
+    volumes:
+      - ./build/node1/blackfuryd:/blackfury:Z
+    command:
+      - /blackfuryd start --home /blackfury
+    networks:
+      localnet:
+        ipv4_address: 192.167.10.3
+
+  node2:
+    container_name: blackfurynode2
+    image: "blackfury/node"
+    ports:
+      - "26661-26662:26656-26657"
+    volumes:
+      - ./build/node2/blackfuryd:/blackfury:Z
+    command:
+      - /blackfuryd start --home /blackfury
+    networks:
+      localnet:
+        ipv4_address: 192.167.10.4
+
+  node3:
+    container_name: blackfurynode3
+    image: "blackfury/node"
+    ports:
+      - "26663-26664:26656-26657"
+    volumes:
+      - ./build/node3/blackfuryd:/blackfury:Z
+    command:
+      - /blackfuryd start --home /blackfury
+    networks:
+      localnet:
+        ipv4_address: 192.167.10.5
+
+networks:
+  localnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        -
+          subnet: 192.167.10.0/16
